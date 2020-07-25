@@ -13,7 +13,7 @@ This project was generated with [`wemake-django-template`](https://github.com/we
 
 You will need:
 
-- `python3.7` (see `pyproject.toml` for full version)
+- `python3.8` (see `pyproject.toml` for full version)
 
 ## Development
 
@@ -28,9 +28,10 @@ When developing locally, we use:
 
 To setup the environment, please create a virtualenv for the project.
 
-Then run:
+Then inside of a fresh env, run:
 
 `pip3 install poetry`
+
 `poetry install`
 
 In order to launch the application from the root of the project, run:
