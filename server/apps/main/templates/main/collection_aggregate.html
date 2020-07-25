@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} - Collection {{ collection.created_at }}{% endblock %}
+
+{% block content %}
+
+<h3>Collection {{ collection }}</h3>
+
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group mr-2" role="group">
+    {% for header,enabled,new_settings in parameters_settings %}
+    <a role="button" class="btn {% if enabled %}btn-info{% else %}btn-light{% endif %}" href="?current_parameters={{ new_settings }}">{{ header }}</a>
+    {% endfor %}
+  </div>
+</div>
+<br>
+<table class="table">
+  <thead>
+  <tr>
+    {% for header in headers %}
+    <th scope="col">{{ header }}</th>
+    {% endfor %}
+  </tr>
+  </thead>
+  <tbody>
+  {% for entry in data %}
+  <tr>
+    {% for value in entry %}
+    <td>{{ value }}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

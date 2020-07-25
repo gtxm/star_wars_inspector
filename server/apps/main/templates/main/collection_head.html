@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} - Collection {{ collection.created_at }}{% endblock %}
+
+{% block content %}
+
+<h3>Collection {{ collection }}</h3>
+
+<table class="table">
+  <thead>
+  <tr>
+    {% for header in headers %}
+    <th scope="col">{{ header }}</th>
+    {% endfor %}
+  </tr>
+  </thead>
+  <tbody>
+  {% for entry in data %}
+  <tr>
+    {% for value in entry %}
+    <td>{{ value }}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% if show_more %}
+<a class="btn btn-primary" href="?more={{ more_data }}" role="button">Load 10 more</a>
+{% endif %}
+{% endblock %}
